@@ -5,11 +5,12 @@ namespace CatalogoFilmes.Entities
         public int IdPremio { get; set;}
         public string Descricao { get; set;} = string.Empty;
 
+        public Premiacao? Premiacao { get; set;}
+
          public ICollection<Pais> Paises { get; set;}
           = new List<Pais>();
 
-        public ICollection<Premiacao> Premiacao { get; set;}
-        = new List<Premiacao>();
+       
 
     }
 }
