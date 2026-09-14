@@ -160,3 +160,4 @@ C:\Users\User\Desktop\Suporte-Kaua\KAUÃ - PESSOAL\CatalogoFilmes\obj\Debug\net1
 C:\Users\User\Desktop\Suporte-Kaua\KAUÃ - PESSOAL\CatalogoFilmes\obj\Debug\net10.0\CatalogoFilmes.pdb
 C:\Users\User\Desktop\Suporte-Kaua\KAUÃ - PESSOAL\CatalogoFilmes\obj\Debug\net10.0\CatalogoFilmes.genruntimeconfig.cache
 C:\Users\User\Desktop\Suporte-Kaua\KAUÃ - PESSOAL\CatalogoFilmes\obj\Debug\net10.0\ref\CatalogoFilmes.dll
+C:\Users\User\Desktop\Suporte-Kaua\KAUÃ - PESSOAL\CatalogoFilmes\obj\Debug\net10.0\CatalogoFilmes.sourcelink.json

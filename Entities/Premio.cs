@@ -7,5 +7,9 @@ namespace CatalogoFilmes.Entities
 
          public ICollection<Pais> Paises { get; set;}
           = new List<Pais>();
+
+        public ICollection<Premiacao> Premiacao { get; set;}
+        = new List<Premiacao>();
+
     }
 }

@@ -13,8 +13,9 @@ namespace  CatalogoFilmes.Context
     public class AppDbContext: DbContext
     {
 
-        public DbSet<Pais> Paises { get; set;}
-        public DbSet<Premio> Premios { get; set;}
+        public DbSet<Pais>Paises { get; set;}
+        public DbSet<Premio>Premios { get; set;}
+        public DbSet<Premiacao> Premiacoes { get; set;}
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer(AppSettings.GetConnectionString());
@@ -39,6 +40,14 @@ namespace  CatalogoFilmes.Context
                 entity.Property(e => e.Descricao)
                 .IsRequired()
                 .HasMaxLength(100);
+            });
+
+            modelBuilder.Entity<Premiacao>(entity =>
+            {
+                entity.HasKey(e => e.PremiacaoId);
+                entity.Property(e => e.DataPremiacao)
+                .IsRequired();
+  
             });
         }
 
