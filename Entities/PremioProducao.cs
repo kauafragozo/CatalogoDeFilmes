@@ -2,11 +2,10 @@ using System.ComponentModel.DataAnnotations;
 
 namespace CatalogoFilmes.Entities
 {
-    public class Premio_Producao
+    public class PremioProducao
     {
         public int IdPremioProducao { get; set;}
-
-        public int IdPremiacao { get; set;}
-        public Premiacao Premiação { get ;set;} = null!;
+        public Premiacao? Premiação { get ;set;}
+        public TipoPremio? TipoPremio { get;set;}
     }
 }
