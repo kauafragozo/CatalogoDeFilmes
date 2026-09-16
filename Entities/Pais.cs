@@ -9,5 +9,8 @@ namespace CatalogoFilmes.Entities
         public ICollection<Premio> Premios { get ; set;}
          = new List<Premio>();
 
+        public ICollection<Pessoa> Pessoas { get; set;}
+        = new List<Pessoa>();
+
     }
 }

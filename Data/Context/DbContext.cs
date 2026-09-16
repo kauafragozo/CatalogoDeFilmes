@@ -18,6 +18,8 @@ namespace  CatalogoFilmes.Context
         public DbSet<Premiacao> Premiacoes { get; set;}
         public DbSet<PremioProducao> PremioProducoes { get; set;}
         public DbSet<TipoPremio> TipoPremios { get; set;}
+        public DbSet<Pessoa> Pessoas {get;set;}
+        public DbSet<Usuario> Usuarios { get; set;}
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer(AppSettings.GetConnectionString());
@@ -64,6 +66,25 @@ namespace  CatalogoFilmes.Context
                 entity.Property(e => e.Descricao)
                 .IsRequired()
                 .HasMaxLength(100);
+            });
+
+            modelBuilder.Entity<Pessoa>(entity =>
+            {
+                entity.HasKey(e => e.IdPessoa);
+                entity.Property(e => e.Nome)
+                .IsRequired()
+                .HasMaxLength(50);
+            });
+
+            modelBuilder.Entity<Usuario>(entity =>
+            {
+                entity.HasKey(e => e.IdUsuario);
+                entity.Property(e => e.CPF)
+                .IsRequired()
+                .HasMaxLength(14);
+                entity.Property(e => e.Email)
+                .IsRequired()
+                .HasMaxLength(50);
             });
 
 
