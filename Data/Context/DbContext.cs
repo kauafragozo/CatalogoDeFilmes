@@ -58,7 +58,13 @@ namespace CatalogoFilmes.Context
 
             modelBuilder.Entity<PremioProducao>(entity =>
             {
-                entity.HasKey(e => e.IdPremioProducao);
+                entity.HasKey(e => e.IdPremioProducao)
+                entity.HasOne(e => e.Premiação)
+                .WithMany()
+                entity.Property(e => e.Premiação)
+                .IsRequired();
+                entity.Property(e => e.TipoPremio)
+                .IsRequired();
 
             });
 
@@ -68,14 +74,24 @@ namespace CatalogoFilmes.Context
                 entity.Property(e => e.Descricao)
                 .IsRequired()
                 .HasMaxLength(100);
+     
             });
 
             modelBuilder.Entity<Pessoa>(entity =>
             {
-                entity.HasKey(e => e.IdPessoa);              
+                entity.HasKey(e => e.IdPessoa); 
+                entity.HasOne(e => e.PaisMoradia)
+                .WithMany(e => e.PessoasMoradoras)
+                .HasForeignKey(e => e.PaisMoradiaId)
+                .OnDelete(DeleteBehavior.Restrict);    
+                entity.HasOne(e => e.PaisNacenca)
+                .WithMany(e => e.PessoasNascenca)
+                .HasForeignKey(e => e.PaisNascencaId)
+                .OnDelete(DeleteBehavior.Restrict);
                 entity.Property(e => e.Nome)
                 .IsRequired()
                 .HasMaxLength(50);
+                
             });
 
             modelBuilder.Entity<Usuario>(entity =>
