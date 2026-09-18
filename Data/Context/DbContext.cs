@@ -92,8 +92,7 @@ namespace CatalogoFilmes.Context
                 entity.HasKey(e => e.IdPessoa); 
                 entity.HasOne(e => e.PaisMoradia)
                 .WithMany(e => e.PessoasMoradoras)
-                .HasForeignKey(e => e.PaisMoradiaId)
-                .OnDelete(DeleteBehavior.Restrict);    
+                .HasForeignKey(e => e.PaisMoradiaId);  
                 entity.HasOne(e => e.PaisNacenca)
                 .WithMany(e => e.PessoasNascenca)
                 .HasForeignKey(e => e.PaisNascencaId)
