@@ -100,6 +100,10 @@ namespace CatalogoFilmes.Context
                 entity.Property(e => e.Nome)
                 .IsRequired()
                 .HasMaxLength(50);
+                entity.HasOne(e => e.Usuario)
+                .WithMany(e => e.Pessoas)
+                .HasForeignKey(e => e.UsuarioId)
+                .OnDelete(DeleteBehavior.Restrict);
                 
             });
 
