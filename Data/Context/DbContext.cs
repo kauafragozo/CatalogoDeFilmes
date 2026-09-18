@@ -53,17 +53,27 @@ namespace CatalogoFilmes.Context
                 entity.HasKey(e => e.PremiacaoId);
                 entity.Property(e => e.DataPremiacao)
                 .IsRequired();
-
+                entity.HasOne(e => e.Premio)
+                .WithMany(e => e.Premiacoes)
+                .HasForeignKey(e => e.PremioId)
+                .OnDelete(DeleteBehavior.Restrict);
+                
             });
 
             modelBuilder.Entity<PremioProducao>(entity =>
             {
-                entity.HasKey(e => e.IdPremioProducao)
-                entity.HasOne(e => e.Premiação)
-                .WithMany()
-                entity.Property(e => e.Premiação)
+                entity.HasKey(e => e.IdPremioProducao);
+                entity.HasOne(e => e.Premiacao)
+                .WithMany(e => e.PremioProducoesP)
+                .HasForeignKey(e => e.PremiacaoId)
+                .OnDelete(DeleteBehavior.Restrict);
+                entity.Property(e => e.PremiacaoId)
                 .IsRequired();
-                entity.Property(e => e.TipoPremio)
+                entity.HasOne(e => e.TipoPremio)
+                .WithMany(e => e.PremioProducoesT)
+                .HasForeignKey(e => e.TipoPremioId)
+                .OnDelete(DeleteBehavior.Restrict);
+                entity.Property(e => e.TipoPremioId)
                 .IsRequired();
 
             });
@@ -103,11 +113,13 @@ namespace CatalogoFilmes.Context
                 entity.Property(e => e.Email)
                 .IsRequired()
                 .HasMaxLength(50);
+
             });
 
             modelBuilder.Entity<Atuacao>(entity =>
             {
                 entity.HasKey(e => e.IdAtuacao);
+                entity.HasOne(e => e.Pessoa);
                 entity.Property(e => e.Papel)
                 .IsRequired()
                 .HasMaxLength(50);

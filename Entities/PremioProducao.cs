@@ -6,7 +6,8 @@ namespace CatalogoFilmes.Entities
     {
         public int IdPremioProducao { get; set;}
         public int PremiacaoId { get; set;}
-        public Premiacao Premiação { get ;set;} = null!;
+        public Premiacao Premiacao { get ;set;} = null!;
+        public int TipoPremioId{get; set;}
         public TipoPremio TipoPremio { get;set;} = null!;
 
         public ICollection<Pessoa>Pessoas {get; set;}

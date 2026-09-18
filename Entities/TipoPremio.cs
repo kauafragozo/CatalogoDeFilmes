@@ -7,7 +7,7 @@ namespace CatalogoFilmes.Entities
         public int IdTipoPremio { get; set; }
         public string Descricao { get; set; } = string.Empty;
 
-        public ICollection<PremioProducao> PremioProducoes {get; set;}
+        public ICollection<PremioProducao> PremioProducoesT {get; set;}
         = new List<PremioProducao>();
     }
 }

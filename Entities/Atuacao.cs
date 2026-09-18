@@ -4,6 +4,7 @@ namespace CatalogoFilmes.Entities
     {
         public int IdAtuacao {get; set;}
         public string Papel { get; set;} = string.Empty;
+        public int PessoaId{get; set;}
         public Pessoa Pessoa {get; set;} = null!;
         public TipoAtuacao TipoAtuacao { get ; set;} = null!;
 

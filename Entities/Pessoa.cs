@@ -12,6 +12,8 @@ namespace CatalogoFilmes.Entities
         = new List<PremioProducao>();
         public ICollection<Atuacao> Atuacoes { get; set; }
         = new List<Atuacao>();
+        
+
 
 
     }

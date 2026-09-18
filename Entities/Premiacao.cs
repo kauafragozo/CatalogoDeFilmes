@@ -4,8 +4,9 @@ namespace CatalogoFilmes.Entities
     {
         public int PremiacaoId {get; set;}
         public DateOnly DataPremiacao{get; set;}
+        public int PremioId{get; set;}
         public Premio Premio {get; set;} = null!;
-         public ICollection<PremioProducao> PremioProducoes { get; set;}
+         public ICollection<PremioProducao> PremioProducoesP { get; set;}
         = new List<PremioProducao>();
 
     }
