@@ -25,6 +25,8 @@ namespace CatalogoFilmes.Context
         public DbSet<ProducaoCinematografica> ProducoesCinematograficas { get; set; }
         public DbSet<Produtora> Produtoras { get; set; }
         public DbSet<FaixaEtaria> FaixasEtarias {get; set;}
+        public DbSet<Local> Locais { get; set;}
+        public DbSet<Idioma> Idiomas { get; set;}
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer(AppSettings.GetConnectionString());
@@ -173,6 +175,26 @@ namespace CatalogoFilmes.Context
                 entity.Property(e => e.IdadeLimite)
                 .IsRequired();
 
+            });
+
+            modelBuilder.Entity<Local>(entity =>
+            {
+                entity.HasKey(e => e.IdLocal);
+                entity.Property(e => e.Nome)
+                .IsRequired()
+                .HasMaxLength(50);
+                entity.Property(e => e.CoordenadasGeograficas)
+                .IsRequired()
+                .HasMaxLength(100);
+            });
+
+            modelBuilder.Entity<Idioma>(entity =>
+            {
+                entity.HasKey(e => e.IdIdioma);
+                entity.Property(e => e.Lingua)
+                .IsRequired()
+                .HasMaxLength(50);
+                
             });
 
 
