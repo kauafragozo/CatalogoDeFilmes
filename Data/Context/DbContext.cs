@@ -27,6 +27,7 @@ namespace CatalogoFilmes.Context
         public DbSet<FaixaEtaria> FaixasEtarias {get; set;}
         public DbSet<Local> Locais { get; set;}
         public DbSet<Idioma> Idiomas { get; set;}
+        public DbSet<IdiomaNomear> IdiomasNomear{get; set;}
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer(AppSettings.GetConnectionString());
@@ -194,9 +195,19 @@ namespace CatalogoFilmes.Context
                 entity.Property(e => e.Lingua)
                 .IsRequired()
                 .HasMaxLength(50);
-                
+
             });
 
+            modelBuilder.Entity<IdiomaNomear>(entity =>
+            {
+                entity.HasKey(e => e.IdIdiomaNomear);
+                entity.Property(e => e.Titulo)
+                .IsRequired()
+                .HasMaxLength(70);
+                entity.Property(e => e.Original)
+                .IsRequired()
+                .HasMaxLength(70);     
+            });
 
         }
 
