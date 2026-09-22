@@ -22,6 +22,7 @@ namespace CatalogoFilmes.Context
         public DbSet<Usuario> Usuarios { get; set; }
         public DbSet<Atuacao> Atuacoes { get; set; }
         public DbSet<TipoAtuacao> TipoAtuacoes { get; set; }
+        public DbSet<ProducaoCinematografica> ProducoesCinematograficas { get; set;}
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer(AppSettings.GetConnectionString());
@@ -126,6 +127,10 @@ namespace CatalogoFilmes.Context
                 entity.Property(e => e.Papel)
                 .IsRequired()
                 .HasMaxLength(50);
+                entity.HasOne(e => e.ProducaoCinematografica)
+                .WithMany( e => e.Atuacoes)
+                .HasForeignKey(e => e.ProducaoCinematograficaId)
+                .OnDelete(DeleteBehavior.Restrict);
             });
 
             modelBuilder.Entity<TipoAtuacao>(entity =>
@@ -134,6 +139,19 @@ namespace CatalogoFilmes.Context
                 entity.Property(e => e.Descricao)
                 .IsRequired()
                 .HasMaxLength(50);                
+            });
+
+            modelBuilder.Entity<ProducaoCinematografica>(entity =>
+            {
+                entity.HasKey(e => e.IdProdCinematografica);
+                entity.Property(e => e.Ano)
+                .IsRequired()
+                .HasMaxLength(4);
+                entity.Property(e => e.Duracao)
+                .IsRequired();
+                entity.Property(e => e.Serie)
+                .HasMaxLength(100);
+
             });
 
 
