@@ -12,6 +12,12 @@ Durante o desenvolvimento desse projeto, foram usadas as seguintes tecnologias:
 ![SQL Server](https://img.shields.io/badge/SQL%20Server-Database-CC2927?logo=microsoftsqlserver&logoColor=white)
 ![Git](https://img.shields.io/badge/Git-Version%20Control-F05032?logo=git&logoColor=white)
 
+<br>
+<h2>🎲 Diagrama do Banco de Dados </h2>
+
+<img width="2125" height="1161" alt="Diagrama-BancodeDados" src="https://github.com/user-attachments/assets/174a6988-cb62-4d02-b700-86f95f9b0236" />
+
+
 <h2>👨🏻‍💻​ Arquitetura </h2>
 Organizei meu projeto nas seguintes pastas:<br>
 - Entities: Armazena as entidades do projeto.<br>
@@ -23,3 +29,5 @@ Projeto ainda em estagio de desenvolvimento.<br>
 <br>
 
 ![Status](https://img.shields.io/badge/Status-In%20Development-orange)
+
+
