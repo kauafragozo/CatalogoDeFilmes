@@ -24,6 +24,7 @@ namespace CatalogoFilmes.Context
         public DbSet<TipoAtuacao> TipoAtuacoes { get; set; }
         public DbSet<ProducaoCinematografica> ProducoesCinematograficas { get; set; }
         public DbSet<Produtora> Produtoras { get; set; }
+        public DbSet<FaixaEtaria> FaixasEtarias {get; set;}
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer(AppSettings.GetConnectionString());
@@ -132,6 +133,10 @@ namespace CatalogoFilmes.Context
                 .WithMany(e => e.Atuacoes)
                 .HasForeignKey(e => e.ProducaoCinematograficaId)
                 .OnDelete(DeleteBehavior.Restrict);
+                entity.HasOne(e => e.TipoAtuacao)
+                .WithMany(e => e.Atuacoes)
+                .HasForeignKey(e => e.TipoAtuacaoId)
+                .OnDelete(DeleteBehavior.Restrict);
             });
 
             modelBuilder.Entity<TipoAtuacao>(entity =>
@@ -161,6 +166,13 @@ namespace CatalogoFilmes.Context
                 .IsRequired()
                 .HasMaxLength(50);
                 
+            });
+            modelBuilder.Entity<FaixaEtaria>(entity =>
+            {
+                entity.HasKey(e => e.IdFaixaEtaria);
+                entity.Property(e => e.IdadeLimite)
+                .IsRequired();
+
             });
 
 

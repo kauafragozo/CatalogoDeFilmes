@@ -10,6 +10,8 @@ namespace CatalogoFilmes.Entities
         = new List<Atuacao>();
         public ICollection<Produtora> Produtoras { get; set;}
         = new List<Produtora>();
+        public ICollection<FaixaEtaria> FaixasEtarias {get; set;}
+        = new List<FaixaEtaria>(); 
 
     }
 }

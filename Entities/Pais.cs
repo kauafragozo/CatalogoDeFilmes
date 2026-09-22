@@ -14,7 +14,8 @@ namespace CatalogoFilmes.Entities
         = new List<Pessoa>();
         public ICollection<Produtora> Produtoras { get; set;}
         = new List<Produtora>();
-        
-             
+        public ICollection<FaixaEtaria> FaixasEtarias {get; set;}
+        =new List<FaixaEtaria>();
+                   
     }
 }

@@ -6,6 +6,7 @@ namespace CatalogoFilmes.Entities
         public string Papel { get; set;} = string.Empty;
         public int PessoaId{get; set;}
         public Pessoa Pessoa {get; set;} = null!;
+        public int TipoAtuacaoId{get; set;}
         public TipoAtuacao TipoAtuacao { get ; set;} = null!;
         public int ProducaoCinematograficaId { get; set;} 
         public ProducaoCinematografica ProducaoCinematografica { get; set;} = null!;
