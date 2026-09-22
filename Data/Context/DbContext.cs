@@ -22,7 +22,8 @@ namespace CatalogoFilmes.Context
         public DbSet<Usuario> Usuarios { get; set; }
         public DbSet<Atuacao> Atuacoes { get; set; }
         public DbSet<TipoAtuacao> TipoAtuacoes { get; set; }
-        public DbSet<ProducaoCinematografica> ProducoesCinematograficas { get; set;}
+        public DbSet<ProducaoCinematografica> ProducoesCinematograficas { get; set; }
+        public DbSet<Produtora> Produtoras { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer(AppSettings.GetConnectionString());
@@ -58,7 +59,7 @@ namespace CatalogoFilmes.Context
                 .WithMany(e => e.Premiacoes)
                 .HasForeignKey(e => e.PremioId)
                 .OnDelete(DeleteBehavior.Restrict);
-                
+
             });
 
             modelBuilder.Entity<PremioProducao>(entity =>
@@ -85,15 +86,15 @@ namespace CatalogoFilmes.Context
                 entity.Property(e => e.Descricao)
                 .IsRequired()
                 .HasMaxLength(100);
-     
+
             });
 
             modelBuilder.Entity<Pessoa>(entity =>
             {
-                entity.HasKey(e => e.IdPessoa); 
+                entity.HasKey(e => e.IdPessoa);
                 entity.HasOne(e => e.PaisMoradia)
                 .WithMany(e => e.PessoasMoradoras)
-                .HasForeignKey(e => e.PaisMoradiaId);  
+                .HasForeignKey(e => e.PaisMoradiaId);
                 entity.HasOne(e => e.PaisNacenca)
                 .WithMany(e => e.PessoasNascenca)
                 .HasForeignKey(e => e.PaisNascencaId)
@@ -105,7 +106,7 @@ namespace CatalogoFilmes.Context
                 .WithMany(e => e.Pessoas)
                 .HasForeignKey(e => e.UsuarioId)
                 .OnDelete(DeleteBehavior.Restrict);
-                
+
             });
 
             modelBuilder.Entity<Usuario>(entity =>
@@ -128,7 +129,7 @@ namespace CatalogoFilmes.Context
                 .IsRequired()
                 .HasMaxLength(50);
                 entity.HasOne(e => e.ProducaoCinematografica)
-                .WithMany( e => e.Atuacoes)
+                .WithMany(e => e.Atuacoes)
                 .HasForeignKey(e => e.ProducaoCinematograficaId)
                 .OnDelete(DeleteBehavior.Restrict);
             });
@@ -138,7 +139,7 @@ namespace CatalogoFilmes.Context
                 entity.HasKey(e => e.IdTipoAtuacao);
                 entity.Property(e => e.Descricao)
                 .IsRequired()
-                .HasMaxLength(50);                
+                .HasMaxLength(50);
             });
 
             modelBuilder.Entity<ProducaoCinematografica>(entity =>
@@ -152,6 +153,14 @@ namespace CatalogoFilmes.Context
                 entity.Property(e => e.Serie)
                 .HasMaxLength(100);
 
+            });
+            modelBuilder.Entity<Produtora>(entity =>
+            {
+                entity.HasKey(e => e.IdProdutora);
+                entity.Property(e => e.Nome)
+                .IsRequired()
+                .HasMaxLength(50);
+                
             });
 
 
