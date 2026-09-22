@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\User\\Desktop\\Suporte-Kaua\\KAUÃ - PESSOAL\\CatalogoFilmes\\CatalogoFilmes.csproj": {}
+    "D:\\Projetos\\CatalogoDeFilmes\\CatalogoFilmes.csproj": {}
   },
   "projects": {
-    "C:\\Users\\User\\Desktop\\Suporte-Kaua\\KAUÃ - PESSOAL\\CatalogoFilmes\\CatalogoFilmes.csproj": {
+    "D:\\Projetos\\CatalogoDeFilmes\\CatalogoFilmes.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\User\\Desktop\\Suporte-Kaua\\KAUÃ - PESSOAL\\CatalogoFilmes\\CatalogoFilmes.csproj",
+        "projectUniqueName": "D:\\Projetos\\CatalogoDeFilmes\\CatalogoFilmes.csproj",
         "projectName": "CatalogoFilmes",
-        "projectPath": "C:\\Users\\User\\Desktop\\Suporte-Kaua\\KAUÃ - PESSOAL\\CatalogoFilmes\\CatalogoFilmes.csproj",
-        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User\\Desktop\\Suporte-Kaua\\KAUÃ - PESSOAL\\CatalogoFilmes\\obj\\",
+        "projectPath": "D:\\Projetos\\CatalogoDeFilmes\\CatalogoFilmes.csproj",
+        "packagesPath": "C:\\Users\\kauaf\\.nuget\\packages\\",
+        "outputPath": "D:\\Projetos\\CatalogoDeFilmes\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\kauaf\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -89,7 +89,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.401/PortableRuntimeIdentifierGraph.json",
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.400/PortableRuntimeIdentifierGraph.json",
           "packagesToPrune": {
             "Microsoft.CSharp": "(,4.7.32767]",
             "Microsoft.VisualBasic": "(,10.4.32767]",
