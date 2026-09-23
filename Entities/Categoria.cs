@@ -9,6 +9,5 @@ namespace CatalogoFilmes.Entities
         public ICollection<IdiomaTraducao> IdiomasTraducoes { get; set;}
         = new List<IdiomaTraducao>();
         
-
     }
 }
