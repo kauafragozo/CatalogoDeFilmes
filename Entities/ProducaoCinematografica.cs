@@ -14,6 +14,8 @@ namespace CatalogoFilmes.Entities
         = new List<FaixaEtaria>(); 
         public ICollection<Local> Locais { get; set;}
         = new List<Local>();
+        public ICollection<Categoria> Categorias { get; set;}
+        = new List<Categoria>();
 
     }
 }
