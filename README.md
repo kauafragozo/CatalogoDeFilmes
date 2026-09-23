@@ -26,12 +26,12 @@ Organizei meu projeto nas seguintes pastas:<br>
 
 <h2>❗​ Versionamento </h2>
 Projeto divido em dois ambientes (branches): <br>
-- develop​: Ambiente de desenvolvimento continuo<br>
+- develop​: Ambiente de desenvolvimento contínuo<br>
 - main: Versoes estaveis do projeto<br>
 
 
 <h2>❓ Como executar </h2>
--Clone o repositorio na nuvem para o seu repositório local<br>
+- Clone o repositório na nuvem para o seu repositório local<br>
 - Execute o projeto com o comando "dotnet run"<br>
 Importante: Necessario ter uma IDE, SGBD e .NET instalados na sua maquina<br>
 
