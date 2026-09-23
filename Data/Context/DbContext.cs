@@ -30,6 +30,7 @@ namespace CatalogoFilmes.Context
         public DbSet<IdiomaNomear> IdiomasNomear{get; set;}
         public DbSet<Categoria> Categorias {get; set;}
         public DbSet<IdiomaTraducao> IdiomasTraducoes {get;set;}
+        public DbSet<IdiomaResumo> IdiomasResumos { get; set;}
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer(AppSettings.GetConnectionString());
@@ -225,6 +226,15 @@ namespace CatalogoFilmes.Context
                 entity.Property(e => e.Traducao)
                 .IsRequired()
                 .HasMaxLength(100);
+            });
+
+            modelBuilder.Entity<IdiomaResumo>(entity =>
+            {
+                entity.HasKey(e => e.IdIdiomaResumo);
+                entity.Property(e => e.Sinopse)
+                .IsRequired()
+                .HasMaxLength(255);
+                
             });
 
         }

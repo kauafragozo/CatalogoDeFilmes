@@ -16,6 +16,11 @@ namespace CatalogoFilmes.Entities
         = new List<Local>();
         public ICollection<Categoria> Categorias { get; set;}
         = new List<Categoria>();
+        public ICollection<IdiomaNomear> IdiomasNomeas { get; set;}
+        = new List<IdiomaNomear>();
+        public ICollection<IdiomaResumo> IdiomasResumos { get; set;}
+        = new List<IdiomaResumo>();
+        
 
     }
 }

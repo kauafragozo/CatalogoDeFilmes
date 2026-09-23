@@ -6,6 +6,8 @@ namespace CatalogoFilmes.Entities
         public string Descricao {get; set;} = string.Empty;
         public ICollection<ProducaoCinematografica> ProducoesCinematograficas { get; set;}
         = new List<ProducaoCinematografica>();
+        public ICollection<IdiomaTraducao> IdiomasTraducoes { get; set;}
+        = new List<IdiomaTraducao>();
         
 
     }
