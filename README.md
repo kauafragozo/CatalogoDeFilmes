@@ -1,5 +1,5 @@
 <h1>📽️ Catalogo de Filmes </h1>
-Gerador de Banco de dados com base em um diagrama proposto em uma atividade da faculdade de ADS. Projeto sendo desenvolvido de forma extra curricular ao curso para desenvolver meus entendimentos e praticar meu conhecimento em banco de dados, c# e EF Core.<br>
+Gerador de Banco de dados com base em um diagrama proposto em uma atividade da faculdade de ADS. Projeto sendo desenvolvido de forma extra curricular ao curso para desenvolver meus entendimentos e praticar meu conhecimento em banco de dados, C# e EF Core.<br>
 
 <h2>🛠️ Tecnologias Ultilizadas </h2>
 Durante o desenvolvimento desse projeto, foram usadas as seguintes tecnologias:
@@ -24,10 +24,20 @@ Organizei meu projeto nas seguintes pastas:<br>
 - Data: Armazena as conexões com o banco de dados, além do mapeamento das entidades e um arquivo de configuração separado com a Sting de conexão <br>
 - Program.cs: Arquivo que gerencia o fluxo de execução do programa.
 
-<h2>⚠️ Observações Importantes!! ​</h2>
-Projeto ainda em estagio de desenvolvimento.<br>
-<br>
+<h2>❗​ Versionamento </h2>
+Projeto divido em dois ambientes (branches): <br>
+- develop​: Ambiente de desenvolvimento continuo<br>
+- main: Versoes estaveis do projeto<br>
 
-![Status](https://img.shields.io/badge/Status-In%20Development-orange)
+
+<h2>❓ Como executar </h2>
+-Clone o repositorio na nuvem para o seu repositório local<br>
+- Execute o projeto com o comando "dotnet run"<br>
+Importante: Necessario ter uma IDE, SGBD e .NET instalados na sua maquina<br>
+
+<h2>😎​ Consideraçoes Finais </h2>
+Esse projeto foi desenvolvido com intencao de desenvolver meus conhecimentos em Banco de Dados em geral, alem de aprender a usar ferramentas como EFCore. Tive muitos aprendizados durante o desenvolvimento, principalmente em relacionamentos e interpretacao de Diagramas de Bancos de Dados.
+
+
 
 
